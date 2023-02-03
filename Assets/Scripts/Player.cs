@@ -6,8 +6,13 @@ using UnityEngine.AI;
 public class Player : MonoBehaviour
 {
     public int PlayerIndex;
+
+    [Header("Movement")]
     public float MoveForce;
     public float MaxSpeed;
+
+    [Header("Abilities")]
+    public List<PlayerAbility> Abilities = new List<PlayerAbility>();
 
     private new Rigidbody2D rigidbody;
 
@@ -37,5 +42,12 @@ public class Player : MonoBehaviour
             var velocityNormalized = rigidbody.velocity.normalized;
             rigidbody.velocity = new Vector2(velocityNormalized.x, velocityNormalized.y) * MaxSpeed;
         }
+
+        if (Input.GetButtonDown($"x-{PlayerIndex}"))
+        {
+            Debug.Log("X " + PlayerIndex);
+        }
+
+        
     }
 }
