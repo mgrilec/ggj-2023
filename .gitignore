@@ -3,3 +3,5 @@ Temp/
 obj/
 Logs/
 .vs/
+UserSettings/Layouts/default-2021.dwlt
+*.csproj
