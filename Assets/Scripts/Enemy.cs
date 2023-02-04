@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     [Header("Attack")]
     public AttackPreference AttackPreference;
+    public float AttackDamage;
     public float AttackRange;
     public float AttackCooldown;
     private float lastAttackTime;
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour, IDamageable
     NavMeshAgent agent;
 
     Player[] players;
+    List<Vector3> moveTargets = new List<Vector3>();
     List<IDamageable> visibleTargets = new List<IDamageable>();
     List<IDamageable> visibleTargetsWithinRange = new List<IDamageable>();
     HealthBar healthBar;
@@ -60,11 +62,6 @@ public class Enemy : MonoBehaviour, IDamageable
                 closestPlayerDistanceSqr = distanceSqr;
                 closestPlayer = player;
             }
-        }
-
-        if (agent.SetDestination(closestPlayer.transform.position))
-        {
-            
         }
 
         visibleTargets.Clear();
@@ -114,12 +111,47 @@ public class Enemy : MonoBehaviour, IDamageable
             return aDistance.CompareTo(bDistance);
         });
 
+        if (AttackPreference == AttackPreference.Tree && Tree.Instance)
+        {
+            agent.SetDestination(Tree.Instance.transform.position);
+        }
+        else if (visibleTargets.Count > 0)
+        {
+            agent.SetDestination(visibleTargets[0].transform.position);
+        }
+        else
+        {
+            agent.SetDestination(Tree.Instance.transform.position);
+        }
+
         visibleTargetsWithinRange.Clear();
         visibleTargetsWithinRange.AddRange(visibleTargets.FindAll(target =>
         {
             float distanceSqr = (transform.position - target.transform.position).sqrMagnitude;
             return distanceSqr < AttackRange * AttackRange;
         }));
+
+        if (visibleTargetsWithinRange.Count > 0)
+        {
+            var target = visibleTargetsWithinRange[0];
+            Attack(target);
+        }
+    }
+
+    public bool CanAttack()
+    {
+        return Time.time - lastAttackTime > AttackCooldown;
+    }
+
+    public void Attack(IDamageable target)
+    {
+        if (!CanAttack())
+        {
+            return;
+        }
+
+        target.Damage(AttackDamage);
+        lastAttackTime = Time.time;
     }
 
     public void Damage(float damage)
