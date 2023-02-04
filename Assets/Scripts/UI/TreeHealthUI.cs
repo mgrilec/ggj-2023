@@ -5,20 +5,29 @@ using TMPro;
 
 public class TreeHealthUI : MonoBehaviour
 {
-    private TextMeshProUGUI text;
+    public TextMeshProUGUI tree;
+    public TextMeshProUGUI wave;
 
-    private void Awake()
-    {
-        text = GetComponentInChildren<TextMeshProUGUI>();
-    }
+    public Color dangerColor;
+    public Color normalColor;
 
     private void Update()
     {
-        if (!Tree.Instance)
+        if (Tree.Instance)
         {
-            return;
+            tree.text = "roots: " + (Tree.Instance.Health / Tree.Instance.StartingHealth * 100f).ToString("0") + "%";
         }
 
-        text.text = (Tree.Instance.Health / Tree.Instance.StartingHealth * 100f).ToString("0") + "%";
+        if (WaveManager.Instance.WaitingForNextWave)
+        {
+            wave.color = normalColor;
+            wave.text = "next wave in: " + WaveManager.Instance.NextWaveInTime.ToString("0");
+        }
+        else
+        {
+            wave.color = dangerColor;
+            wave.text = "DANGER!!";
+        }
+        
     }
 }

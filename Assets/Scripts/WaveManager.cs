@@ -8,6 +8,11 @@ public class WaveManager : MonoBehaviour
 
     public List<Wave> Waves = new List<Wave>();
 
+    [HideInInspector]
+    public float NextWaveInTime;
+    [HideInInspector]
+    public bool WaitingForNextWave;
+
     private void Awake()
     {
         Instance = this;
@@ -16,6 +21,11 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartWaves());
+    }
+
+    private void Update()
+    {
+        NextWaveInTime -= Time.deltaTime;
     }
 
     private IEnumerator StartWaves()
@@ -29,7 +39,10 @@ public class WaveManager : MonoBehaviour
     private IEnumerator StartWave(Wave wave)
     {
         // starting delay
+        WaitingForNextWave = true;
+        NextWaveInTime = wave.Delay;
         yield return new WaitForSeconds(wave.Delay);
+        WaitingForNextWave = false;
 
         foreach (var spawn in wave.Spawns)
         {
