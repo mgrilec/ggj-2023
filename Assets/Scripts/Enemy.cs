@@ -192,8 +192,11 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void OnDestroy()
     {
-        GameObject corpsePrefab = CorpsePrefabs[Random.Range(0, CorpsePrefabs.Count)];
-        var instance = Instantiate(corpsePrefab);
-        instance.transform.position = transform.position;
+        if (CorpsePrefabs.Count > 0)
+        {
+            GameObject corpsePrefab = CorpsePrefabs[Random.Range(0, CorpsePrefabs.Count)];
+            var instance = Instantiate(corpsePrefab);
+            instance.transform.position = transform.position;
+        }
     }
 }

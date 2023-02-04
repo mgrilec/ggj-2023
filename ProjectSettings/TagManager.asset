@@ -50,6 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Players
+    uniqueID: 3598124509
+    locked: 0
   - name: Projectiles
     uniqueID: 657353791
     locked: 0

@@ -71,6 +71,22 @@ PrefabInstance:
       propertyPath: StartingHealth
       value: 95
       objectReference: {fileID: 0}
+    - target: {fileID: 4768926740532805814, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768926740532805814, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768926740532805814, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213710144227274288, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3987c82cdf601bf48b37508ff5b5e8e4, type: 3}
     - target: {fileID: 6213710144227274288, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -82,6 +98,10 @@ PrefabInstance:
     - target: {fileID: 6213710144227274288, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: m_Color.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213710144227274288, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7959295971980910262, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: MouseAimingEnabled

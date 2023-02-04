@@ -22,6 +22,7 @@ public class Player : MonoBehaviour, IDamageable
     private PlayerAimer aimer;
     private HealthBar healthBar;
     private new CircleCollider2D collider;
+    private SpriteRenderer sprite;
     
 
     private void Awake()
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour, IDamageable
         collider = GetComponentInChildren<CircleCollider2D>();
         Abilities.AddRange(GetComponentsInChildren<PlayerAbility>());
         healthBar = GetComponentInChildren<HealthBar>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -58,6 +60,8 @@ public class Player : MonoBehaviour, IDamageable
 
         if (aimer.Aiming)
         {
+            sprite.transform.rotation = Quaternion.AngleAxis(aimer.Angle + 90f, Vector3.forward);
+
             foreach (var ability in Abilities)
             {
                 if (Input.GetButton($"{ability.Key}-{PlayerIndex}") && ability.CanFire())
