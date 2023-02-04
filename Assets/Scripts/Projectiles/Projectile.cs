@@ -24,7 +24,7 @@ public abstract class Projectile : MonoBehaviour
             }
 
             transform.position = hit.point;
-            Kill();
+            Kill(hit);
         }
 
         float offset = Speed * Time.fixedDeltaTime;
@@ -39,12 +39,14 @@ public abstract class Projectile : MonoBehaviour
 
     public abstract void HitEffect(RaycastHit2D hit);
 
-    public void Kill()
+    public void Kill(RaycastHit2D hit)
     {
         if (ExplosionPrefab)
         {
             var instance = Instantiate(ExplosionPrefab);
             instance.transform.position = transform.position;
+            float angle = Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg;
+            instance.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
 
         Destroy(gameObject);
