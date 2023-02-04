@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1354185747, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: m_Name
+      value: Ice Primary
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354185749, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: ProjectilePrefab
+      value: 
+      objectReference: {fileID: 708342973136527137, guid: de6e344bb18e1c646b2614c95a998c03, type: 3}
     - target: {fileID: 2231042299080682138, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -62,6 +70,18 @@ PrefabInstance:
     - target: {fileID: 3457939807069674447, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: StartingHealth
       value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213710144227274288, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213710144227274288, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.73833895
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213710144227274288, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7959295971980910262, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: MouseAimingEnabled

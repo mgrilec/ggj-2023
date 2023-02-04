@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ffb133617a067d64ab41d60d9054eddd, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.3833332, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b939670fd552f1240bcfc7b74b275209, type: 3}
+  m_Color: {r: 0, g: 0.7571614, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8183559061209215147}
   - component: {fileID: 708342973136527137}
   m_Layer: 0
-  m_Name: Acid Primary Projectile
+  m_Name: Ice Primary Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
