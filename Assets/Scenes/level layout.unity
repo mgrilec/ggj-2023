@@ -2226,7 +2226,7 @@ GameObject:
   - component: {fileID: 386505291}
   - component: {fileID: 386505290}
   m_Layer: 0
-  m_Name: TargetGroup (1)
+  m_Name: TargetGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5182,6 +5182,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2337252873123022982, guid: ebb58f93bdfe5af42a183e172b23c66f, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 386505291}
+    - target: {fileID: 2337252873123022982, guid: ebb58f93bdfe5af42a183e172b23c66f, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 386505291}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb58f93bdfe5af42a183e172b23c66f, type: 3}
 --- !u!1 &915005239
