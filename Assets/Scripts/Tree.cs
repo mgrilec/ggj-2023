@@ -6,6 +6,9 @@ public class Tree : MonoBehaviour, IDamageable
 {
     public static Tree Instance;
 
+    public float StartingHealth;
+    public float Health { get; private set; }
+
     public float Radius 
     {
         get { return collider?.radius ?? 0f; }
@@ -19,8 +22,17 @@ public class Tree : MonoBehaviour, IDamageable
         collider = GetComponentInChildren<CircleCollider2D>();
     }
 
+    private void Start()
+    {
+        Health = StartingHealth;
+    }
+
     public void Damage(float damage)
     {
-
+        Health = Mathf.Max(0, Health - damage);
+        if (Health <= 0)
+        {
+            // game over
+        }
     }
 }
