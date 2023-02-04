@@ -7,6 +7,11 @@ public class Player : MonoBehaviour, IDamageable
 {
     public int PlayerIndex;
 
+    [Header("Stats")]
+    public float StartingHealth;
+    public float Health { get; private set; }
+    public float Radius { get { return collider?.radius ?? 0f; } }
+
     [Header("Movement")]
     public float MoveForce;
     public float MaxSpeed;
@@ -15,22 +20,24 @@ public class Player : MonoBehaviour, IDamageable
 
     private new Rigidbody2D rigidbody;
     private PlayerAimer aimer;
-
-    public void Damage(float damage)
-    {
-        Debug.Log("Damage " + damage);
-    }
+    private HealthBar healthBar;
+    private new CircleCollider2D collider;
+    
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         aimer = GetComponentInChildren<PlayerAimer>();
+        collider = GetComponentInChildren<CircleCollider2D>();
         Abilities.AddRange(GetComponentsInChildren<PlayerAbility>());
+        healthBar = GetComponentInChildren<HealthBar>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        Health = StartingHealth;
+        healthBar.Set(Health / StartingHealth);
     }
 
     // Update is called once per frame
@@ -59,5 +66,16 @@ public class Player : MonoBehaviour, IDamageable
                 }
             }
         }
+    }
+
+    public void Damage(float damage)
+    {
+        Health = Mathf.Max(0, Health - damage);
+        if (Health <= 0)
+        {
+            // trigger game over
+        }
+
+        healthBar.Set(Health / StartingHealth);
     }
 }

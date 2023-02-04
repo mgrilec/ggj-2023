@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [Header("Stats")]
     public float StartingHealth = 20f;
     public float Health { get; private set; }
+    public float Radius { get { return collider?.radius ?? 0f; } }
 
     [Header("Attack")]
     public AttackPreference AttackPreference;
@@ -27,10 +28,10 @@ public class Enemy : MonoBehaviour, IDamageable
     NavMeshAgent agent;
 
     Player[] players;
-    List<Vector3> moveTargets = new List<Vector3>();
     List<IDamageable> visibleTargets = new List<IDamageable>();
     List<IDamageable> visibleTargetsWithinRange = new List<IDamageable>();
     HealthBar healthBar;
+    new CircleCollider2D collider;
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
         players = FindObjectsOfType<Player>();
         healthBar = GetComponentInChildren<HealthBar>();
+        collider = GetComponentInChildren<CircleCollider2D>();
     }
 
     // Start is called before the first frame update
@@ -119,7 +121,7 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             agent.SetDestination(visibleTargets[0].transform.position);
         }
-        else
+        else if (Tree.Instance)
         {
             agent.SetDestination(Tree.Instance.transform.position);
         }
@@ -128,7 +130,7 @@ public class Enemy : MonoBehaviour, IDamageable
         visibleTargetsWithinRange.AddRange(visibleTargets.FindAll(target =>
         {
             float distanceSqr = (transform.position - target.transform.position).sqrMagnitude;
-            return distanceSqr < AttackRange * AttackRange;
+            return distanceSqr < (AttackRange + this.Radius + target.Radius) * (AttackRange + this.Radius + target.Radius);
         }));
 
         if (visibleTargetsWithinRange.Count > 0)
