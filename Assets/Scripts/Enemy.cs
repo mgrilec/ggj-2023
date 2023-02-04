@@ -29,6 +29,9 @@ public class Enemy : MonoBehaviour, IDamageable
     public float AttackCooldown;
     private float lastAttackTime;
 
+    [Header("Corpses")]
+    public List<GameObject> CorpsePrefabs = new List<GameObject>();
+
     NavMeshAgent agent;
 
     Player[] players;
@@ -185,5 +188,12 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameObject corpsePrefab = CorpsePrefabs[Random.Range(0, CorpsePrefabs.Count)];
+        var instance = Instantiate(corpsePrefab);
+        instance.transform.position = transform.position;
     }
 }
