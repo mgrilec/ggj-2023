@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 50
-  MaxDistance: 10000
+  MaxDistance: 1000
   HitLayerMask:
     serializedVersion: 2
     m_Bits: 512
