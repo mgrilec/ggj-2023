@@ -41,6 +41,9 @@ TagManager:
   - name: Floor
     uniqueID: 3297334623
     locked: 0
+  - name: Corpses
+    uniqueID: 3981105963
+    locked: 0
   - name: Tree
     uniqueID: 3718033913
     locked: 0
