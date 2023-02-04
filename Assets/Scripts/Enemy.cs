@@ -113,19 +113,6 @@ public class Enemy : MonoBehaviour, IDamageable
             return aDistance.CompareTo(bDistance);
         });
 
-        if (AttackPreference == AttackPreference.Tree && Tree.Instance)
-        {
-            agent.SetDestination(Tree.Instance.transform.position);
-        }
-        else if (visibleTargets.Count > 0)
-        {
-            agent.SetDestination(visibleTargets[0].transform.position);
-        }
-        else if (Tree.Instance)
-        {
-            agent.SetDestination(Tree.Instance.transform.position);
-        }
-
         visibleTargetsWithinRange.Clear();
         visibleTargetsWithinRange.AddRange(visibleTargets.FindAll(target =>
         {
@@ -137,6 +124,21 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             var target = visibleTargetsWithinRange[0];
             Attack(target);
+        }
+        else
+        {
+            if (AttackPreference == AttackPreference.Tree && Tree.Instance)
+            {
+                agent.SetDestination(Tree.Instance.transform.position);
+            }
+            else if (visibleTargets.Count > 0)
+            {
+                agent.SetDestination(visibleTargets[0].transform.position);
+            }
+            else if (Tree.Instance)
+            {
+                agent.SetDestination(Tree.Instance.transform.position);
+            }
         }
     }
 
