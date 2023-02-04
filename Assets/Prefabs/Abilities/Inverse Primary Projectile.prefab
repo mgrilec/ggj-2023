@@ -137,4 +137,5 @@ MonoBehaviour:
   DestroyLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  ExplosionPrefab: {fileID: 8403101494224845428, guid: c9ad197c49d0daf45abf1c2196c9fb3a, type: 3}
   Damage: 5

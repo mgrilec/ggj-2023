@@ -11,6 +11,8 @@ public abstract class Projectile : MonoBehaviour
     public LayerMask HitLayerMask;
     public LayerMask DestroyLayerMask;
 
+    public GameObject ExplosionPrefab;
+
     private void FixedUpdate()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, Speed * Time.fixedDeltaTime, HitLayerMask | DestroyLayerMask);
@@ -21,7 +23,8 @@ public abstract class Projectile : MonoBehaviour
                 HitEffect(hit);
             }
 
-            Destroy(gameObject);
+            transform.position = hit.point;
+            Kill();
         }
 
         float offset = Speed * Time.fixedDeltaTime;
@@ -35,4 +38,15 @@ public abstract class Projectile : MonoBehaviour
     }
 
     public abstract void HitEffect(RaycastHit2D hit);
+
+    public void Kill()
+    {
+        if (ExplosionPrefab)
+        {
+            var instance = Instantiate(ExplosionPrefab);
+            instance.transform.position = transform.position;
+        }
+
+        Destroy(gameObject);
+    }
 }
