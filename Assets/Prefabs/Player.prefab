@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeadZone: 0.1
+  MouseAimingEnabled: 0
 --- !u!1 &4673283861485090358
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerIndex: 0
   MoveForce: 100
-  MaxSpeed: 3
+  MaxSpeed: 5
 --- !u!50 &745589038681089425
 Rigidbody2D:
   serializedVersion: 4
