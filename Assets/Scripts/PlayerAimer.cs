@@ -7,6 +7,7 @@ public class PlayerAimer : MonoBehaviour
     public float DeadZone;
     public float Angle { get; private set; }
     public bool Aiming { get; private set; }
+    public bool MouseAimingEnabled;
 
     SpriteRenderer sprite;
 
@@ -28,8 +29,20 @@ public class PlayerAimer : MonoBehaviour
         var altVertical = Input.GetAxis($"alt-vertical-{player.PlayerIndex}");
         if (Mathf.Abs(altHorizontal) < DeadZone && Mathf.Abs(altVertical) < DeadZone)
         {
-            Aiming = false;
-            sprite.color = Color.Lerp(sprite.color, new Color(startingColor.r, startingColor.g, startingColor.b, 0f), 10f * Time.deltaTime);
+            if (MouseAimingEnabled)
+            {
+                Aiming = true;
+                sprite.color = Color.Lerp(sprite.color, startingColor, 10f * Time.deltaTime);
+                Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 toMouse = (mouseWorldPosition - transform.position).normalized;
+                Angle = Mathf.Atan2(toMouse.y, toMouse.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(Angle, Vector3.forward);
+            }
+            else
+            {
+                Aiming = false;
+                sprite.color = Color.Lerp(sprite.color, new Color(startingColor.r, startingColor.g, startingColor.b, 0f), 10f * Time.deltaTime);
+            }
         }
         else
         {

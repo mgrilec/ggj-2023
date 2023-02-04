@@ -8428,6 +8428,10 @@ PrefabInstance:
       propertyPath: PlayerIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7959295971980910262, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: MouseAimingEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8661469537260450717, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: m_Name
       value: Player (1)
