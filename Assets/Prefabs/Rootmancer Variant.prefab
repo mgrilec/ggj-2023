@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: PlayerIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3457939807069674447, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: StartingHealth
+      value: 95
+      objectReference: {fileID: 0}
     - target: {fileID: 7959295971980910262, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: MouseAimingEnabled
       value: 1

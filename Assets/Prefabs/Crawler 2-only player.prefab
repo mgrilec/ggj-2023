@@ -378,6 +378,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingHealth: 20
+  AttackPreference: 0
+  AttackDamage: 20
+  AttackRange: 1
+  AttackCooldown: 1.5
 --- !u!50 &4691768505094061214
 Rigidbody2D:
   serializedVersion: 4
