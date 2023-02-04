@@ -13,6 +13,10 @@ public enum AttackPreference
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    [Header("Move")]
+    public bool RotatesWhileMoving;
+    public float RotatesWhileMovingOffset;
+
     [Header("Stats")]
     public float StartingHealth = 20f;
     public float Health { get; private set; }
@@ -53,6 +57,13 @@ public class Enemy : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
+        if (RotatesWhileMoving)
+        {
+            Vector3 velocityNormalized = agent.velocity.normalized;
+            float angle = Mathf.Atan2(velocityNormalized.y, velocityNormalized.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle + RotatesWhileMovingOffset, Vector3.forward);
+        }
+
         // find closest player
         Player closestPlayer = players[0];
         float closestPlayerDistanceSqr = float.MaxValue;
