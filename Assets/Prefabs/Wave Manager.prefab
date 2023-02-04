@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2013662610086513575}
+  - component: {fileID: 8401593639981942799}
   m_Layer: 0
   m_Name: Wave Manager
   m_TagString: Untagged
@@ -31,3 +32,254 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8401593639981942799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822514401494507901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141f12dd7a5d4b64ba8d0927642a1751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waves:
+  - Delay: 5
+    DelayBetweenSpawns: 0.75
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+  - Delay: 35
+    DelayBetweenSpawns: 0.5
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+  - Delay: 35
+    DelayBetweenSpawns: 0.75
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+  - Delay: 55
+    DelayBetweenSpawns: 0.5
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+  - Delay: 50
+    DelayBetweenSpawns: 0.5
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+  - Delay: 50
+    DelayBetweenSpawns: 0.75
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+  - Delay: 55
+    DelayBetweenSpawns: 0.75
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+  - Delay: 60
+    DelayBetweenSpawns: 0.5
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+  - Delay: 50
+    DelayBetweenSpawns: 0.5
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+  - Delay: 60
+    DelayBetweenSpawns: 0.75
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
+      Portal: {fileID: 0}
+  - Delay: 75
+    DelayBetweenSpawns: 1
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: c29e893ad780f45c2a9b30d5bd7bdebf, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1139c1d5a61714428ab9e1e009753975, type: 3}
+      Portal: {fileID: 0}
+  - Delay: 75
+    DelayBetweenSpawns: 1
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 9254a8a79bca244198eb6938f8670520, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 0efd6f5a7cd404388acc0ff7138a4159, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 3340d4ffc328d4f3f9817c06bd905a19, type: 3}
+      Portal: {fileID: 0}
