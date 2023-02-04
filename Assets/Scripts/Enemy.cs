@@ -67,20 +67,27 @@ public class Enemy : MonoBehaviour, IDamageable
         }
 
         visibleTargets.Clear();
-        foreach (var player in players)
+        if (AttackPreference == AttackPreference.Player || AttackPreference == AttackPreference.Whateva)
         {
-            NavMeshHit hit;
-            if (!agent.Raycast(player.transform.position, out hit))
+            foreach (var player in players)
             {
-                visibleTargets.Add(player);
+                NavMeshHit hit;
+                if (!agent.Raycast(player.transform.position, out hit))
+                {
+                    visibleTargets.Add(player);
+                }
             }
         }
-
-        NavMeshHit treeHit;
-        if (Tree.Instance && !agent.Raycast(Tree.Instance.transform.position, out treeHit))
+        
+        if (AttackPreference == AttackPreference.Tree || AttackPreference == AttackPreference.Whateva)
         {
-            visibleTargets.Add(Tree.Instance);
+            NavMeshHit treeHit;
+            if (Tree.Instance && !agent.Raycast(Tree.Instance.transform.position, out treeHit))
+            {
+                visibleTargets.Add(Tree.Instance);
+            }
         }
+        
 
         // sort targets
         visibleTargets.Sort((a, b) =>
