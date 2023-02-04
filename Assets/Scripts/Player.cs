@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     public int PlayerIndex;
 
@@ -11,20 +11,26 @@ public class Player : MonoBehaviour
     public float MoveForce;
     public float MaxSpeed;
 
-    [Header("Abilities")]
-    public List<PlayerAbility> Abilities = new List<PlayerAbility>();
+    private List<PlayerAbility> Abilities = new List<PlayerAbility>();
 
     private new Rigidbody2D rigidbody;
+    private PlayerAimer aimer;
+
+    public void Damage(float damage)
+    {
+        Debug.Log("Damage " + damage);
+    }
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        aimer = GetComponentInChildren<PlayerAimer>();
+        Abilities.AddRange(GetComponentsInChildren<PlayerAbility>());
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -43,11 +49,15 @@ public class Player : MonoBehaviour
             rigidbody.velocity = new Vector2(velocityNormalized.x, velocityNormalized.y) * MaxSpeed;
         }
 
-        if (Input.GetButtonDown($"x-{PlayerIndex}"))
+        if (aimer.Aiming)
         {
-            Debug.Log("X " + PlayerIndex);
+            foreach (var ability in Abilities)
+            {
+                if (Input.GetButton($"{ability.Key}-{PlayerIndex}") && ability.CanFire())
+                {
+                    ability.Fire(transform.position, aimer.Angle);
+                }
+            }
         }
-
-        
     }
 }

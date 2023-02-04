@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAimer : MonoBehaviour
 {
     public float DeadZone;
+    public float Angle { get; private set; }
+    public bool Aiming { get; private set; }
 
     SpriteRenderer sprite;
 
@@ -26,13 +28,15 @@ public class PlayerAimer : MonoBehaviour
         var altVertical = Input.GetAxis($"alt-vertical-{player.PlayerIndex}");
         if (Mathf.Abs(altHorizontal) < DeadZone && Mathf.Abs(altVertical) < DeadZone)
         {
+            Aiming = false;
             sprite.color = Color.Lerp(sprite.color, new Color(startingColor.r, startingColor.g, startingColor.b, 0f), 10f * Time.deltaTime);
         }
         else
         {
+            Aiming = true;
             sprite.color = Color.Lerp(sprite.color, startingColor, 10f * Time.deltaTime);
-            float altAngle = Mathf.Atan2(altVertical, altHorizontal) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(altAngle, Vector3.forward);
+            Angle = Mathf.Atan2(altVertical, altHorizontal) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(Angle, Vector3.forward);
         }
     }
 }

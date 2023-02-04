@@ -4,11 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     NavMeshAgent agent;
 
     Player[] players;
+
+    public void Damage(float damage)
+    {
+        Debug.Log("Damage enemy " + damage);
+    }
 
     private void Awake()
     {

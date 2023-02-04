@@ -16,7 +16,7 @@ public abstract class Projectile : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, Speed * Time.fixedDeltaTime, HitLayerMask | DestroyLayerMask);
         if (hit)
         {
-            if (HitLayerMask == (HitLayerMask | hit.rigidbody.gameObject.layer))
+            if ((HitLayerMask & 1 << hit.collider.gameObject.layer) != 0)
             {
                 HitEffect(hit);
             }
