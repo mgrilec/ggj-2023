@@ -6,14 +6,14 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    [Header("Stats")]
+    public float StartingHealth = 20f;
+    public float Health { get; private set; }
+
     NavMeshAgent agent;
 
     Player[] players;
-
-    public void Damage(float damage)
-    {
-        Debug.Log("Damage enemy " + damage);
-    }
+    HealthBar healthBar;
 
     private void Awake()
     {
@@ -22,12 +22,13 @@ public class Enemy : MonoBehaviour, IDamageable
         agent.updateUpAxis = false;
 
         players = FindObjectsOfType<Player>();
+        healthBar = GetComponentInChildren<HealthBar>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Health = StartingHealth;
     }
 
     // Update is called once per frame
@@ -49,6 +50,17 @@ public class Enemy : MonoBehaviour, IDamageable
         if (agent.SetDestination(closestPlayer.transform.position))
         {
             
+        }
+    }
+
+    public void Damage(float damage)
+    {
+        Health = Mathf.Max(0f, Health - damage);
+        healthBar.Set(Health / StartingHealth);
+
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
