@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4938225501777340175}
   - component: {fileID: 4938225501777340174}
   - component: {fileID: 3790035027362802073}
+  - component: {fileID: 6241038640273894214}
   m_Layer: 0
   m_Name: Pedestal
   m_TagString: Untagged
@@ -56,7 +57,11 @@ MonoBehaviour:
   Wave:
     Delay: 5
     DelayBetweenSpawns: 0
-    Spawns: []
+    Spawns:
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
+    - EnemyPrefab: {fileID: 4691768505094061213, guid: 1c3fa53ddef52c04a9c32b02543fcaf9, type: 3}
+      Portal: {fileID: 0}
 --- !u!58 &3790035027362802073
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -72,7 +77,23 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.043916225, y: 0}
   serializedVersion: 2
-  m_Radius: 2.0956645
+  m_Radius: 1.25
+--- !u!114 &6241038640273894214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4938225501777340173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4938225502145193326
 GameObject:
   m_ObjectHideFlags: 0
