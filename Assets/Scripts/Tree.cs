@@ -17,6 +17,9 @@ public class Tree : MonoBehaviour, IDamageable
     }
 
     public GameObject BleedPrefab;
+    public Transform SpawnPoint1;
+    public Transform SpawnPoint2;
+    public GameObject HealthPackPrefab;
 
     private new CircleCollider2D collider;
     private List<SpriteRenderer> sprites = new List<SpriteRenderer>();
@@ -62,5 +65,16 @@ public class Tree : MonoBehaviour, IDamageable
     public void Slow(float amount, bool stacks, string stackingTag)
     {
 
+    }
+
+    public void SpawnHealthPacks()
+    {
+        SpawnHealthPack(SpawnPoint1.position);
+        SpawnHealthPack(SpawnPoint2.position);
+    }
+
+    private void SpawnHealthPack(Vector3 position)
+    {
+        Instantiate(HealthPackPrefab, position, Quaternion.identity);
     }
 }

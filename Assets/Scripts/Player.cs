@@ -95,7 +95,7 @@ public class Player : MonoBehaviour, IDamageable
             TreeHealthUI.Instance.GameOver();
         }
 
-        healthBar.Set(Health / StartingHealth);
+        healthBar.Set(Health / MaxHealth);
     }
 
     public void DamageOverTime(float damage, bool stacks, string stackingTag)
@@ -106,5 +106,11 @@ public class Player : MonoBehaviour, IDamageable
     public void Slow(float amount, bool stacks, string stackingTag)
     {
 
+    }
+
+    public void Heal(float amount)
+    {
+        Health = Mathf.Min(Health + MaxHealth * amount, MaxHealth);
+        healthBar.Set(Health / MaxHealth);
     }
 }

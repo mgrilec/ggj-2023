@@ -54,6 +54,11 @@ public class WaveManager : MonoBehaviour
             Spawn(spawn);
             yield return new WaitForSeconds(wave.DelayBetweenSpawns);
         }
+
+        if (Tree.Instance)
+        {
+            Tree.Instance.SpawnHealthPacks();
+        }
     }
 
     public void StartExtraWave(Wave wave)
