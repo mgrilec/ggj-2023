@@ -12,6 +12,10 @@ PrefabInstance:
       value: Ice Primary
       objectReference: {fileID: 0}
     - target: {fileID: 1354185749, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: Cooldown
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354185749, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: ProjectilePrefab
       value: 
       objectReference: {fileID: 6975839114755346374, guid: de6e344bb18e1c646b2614c95a998c03, type: 3}
@@ -58,10 +62,6 @@ PrefabInstance:
     - target: {fileID: 2231042299080682138, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3457939807069674447, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
-      propertyPath: MaxSpeed
-      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3457939807069674447, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: MaxHealth

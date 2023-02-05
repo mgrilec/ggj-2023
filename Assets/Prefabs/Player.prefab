@@ -703,8 +703,9 @@ MonoBehaviour:
   PlayerIndex: 0
   StartingHealth: 100
   MaxHealth: 0
-  MoveForce: 100
-  MaxSpeed: 5
+  Spread: 2
+  MoveForce: 200
+  MaxSpeed: 17
   MoveStateName: mite_move
   IdleStateName: mite-stand
 --- !u!50 &745589038681089425
@@ -720,7 +721,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 10
+  m_LinearDrag: 8
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}

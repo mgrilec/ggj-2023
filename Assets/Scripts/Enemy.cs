@@ -119,7 +119,7 @@ public class Enemy : MonoBehaviour, IDamageable
             }
         }
         
-        if (AttackPreference == AttackPreference.Tree || AttackPreference == AttackPreference.Whateva)
+        if (AttackPreference == AttackPreference.Tree || AttackPreference == AttackPreference.Whateva || visibleTargets.Count == 0)
         {
             NavMeshHit treeHit;
             if (Tree.Instance && !agent.Raycast(Tree.Instance.transform.position, out treeHit))

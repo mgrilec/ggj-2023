@@ -17,6 +17,8 @@ public class TreeHealthUI : MonoBehaviour
     public TextMeshProUGUI orbsText;
     public Transform VictoryParent;
     public Image VictoryImage;
+    public Transform SplashParent;
+    public Image SplashImage;
 
     public Color dangerColor;
     public Color normalColor;
@@ -24,6 +26,17 @@ public class TreeHealthUI : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        SplashParent.gameObject.SetActive(true);
+        var tween = DOTween.To(() => SplashImage.color, v => SplashImage.color = v, new Color(1f, 1f, 1f, 0f), 2f);
+        tween.SetDelay(2f);
+        tween.OnComplete(() =>
+        {
+            SplashParent.gameObject.SetActive(false);
+        });
     }
 
     private void Update()
