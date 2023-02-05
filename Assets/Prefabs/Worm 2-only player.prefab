@@ -332,10 +332,11 @@ MonoBehaviour:
   RotatesWhileMoving: 0
   RotatesWhileMovingOffset: 0
   IdleUntilPlayerEntersVision: 0
+  VisionRadius: 18
   StartingHealth: 35
   AttackPreference: 0
   AttackDamage: 40
-  AttackRange: 20
+  AttackRange: 15
   AttackCooldown: 1.5
   Projectile: {fileID: 2254708746668535335, guid: 2314b2decc76be44aa3c1a28186873eb, type: 3}
   CorpsePrefabs:

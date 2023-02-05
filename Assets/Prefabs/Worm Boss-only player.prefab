@@ -380,6 +380,7 @@ MonoBehaviour:
   RotatesWhileMoving: 0
   RotatesWhileMovingOffset: 0
   IdleUntilPlayerEntersVision: 0
+  VisionRadius: 33
   StartingHealth: 65
   AttackPreference: 0
   AttackDamage: 55
