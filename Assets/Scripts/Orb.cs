@@ -22,7 +22,8 @@ public class Orb : MonoBehaviour
         moveTween = DOTween.To(() => transform.position, v => transform.position = v, Tree.Instance.transform.position, 5f);
         moveTween.OnComplete(() =>
         {
-
+            Tree.Instance.Orbs++;
+            Destroy(gameObject);
         });
     }
 
