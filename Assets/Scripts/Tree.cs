@@ -21,6 +21,19 @@ public class Tree : MonoBehaviour, IDamageable
     public Transform SpawnPoint2;
     public GameObject HealthPackPrefab;
 
+    private int orbs;
+    public int Orbs { 
+        get { return orbs; } 
+        set 
+        { 
+            orbs = value; 
+            if (orbs >= 3) 
+            {
+                TreeHealthUI.Instance.Victory();
+            } 
+        } 
+    }
+
     private new CircleCollider2D collider;
     private List<SpriteRenderer> sprites = new List<SpriteRenderer>();
     private List<Vector3> spriteStartingPositions = new List<Vector3>();
