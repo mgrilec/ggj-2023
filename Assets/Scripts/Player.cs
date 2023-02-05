@@ -17,8 +17,13 @@ public class Player : MonoBehaviour, IDamageable
     public float MoveForce;
     public float MaxSpeed;
 
+    [Header("Animation")]
+    public string MoveStateName;
+    public string IdleStateName;
+
     private List<PlayerAbility> Abilities = new List<PlayerAbility>();
 
+    private Animator animator;
     private new Rigidbody2D rigidbody;
     private PlayerAimer aimer;
     private HealthBar healthBar;
@@ -28,6 +33,7 @@ public class Player : MonoBehaviour, IDamageable
 
     private void Awake()
     {
+        animator = GetComponentInChildren<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
         aimer = GetComponentInChildren<PlayerAimer>();
         collider = GetComponentInChildren<CircleCollider2D>();
@@ -48,8 +54,16 @@ public class Player : MonoBehaviour, IDamageable
     {
         var horizontal = Input.GetAxis($"horizontal-{PlayerIndex}");
         var vertical = Input.GetAxis($"vertical-{PlayerIndex}");
-
         var input = new Vector2(horizontal, vertical);
+        if (input.sqrMagnitude > 0.1f)
+        {
+            animator.Play(MoveStateName);
+        }
+        else
+        {
+            animator.Play(IdleStateName);
+        }
+
         rigidbody.AddForce(input * MoveForce);
 
         var velocitySqr = rigidbody.velocity.sqrMagnitude;

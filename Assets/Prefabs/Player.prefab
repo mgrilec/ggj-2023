@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 663724149314499975}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.234835, y: 0.234835, z: 0.46967}
+  m_LocalScale: {x: 0.3522525, y: 0.3522525, z: 0.704505}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2231042299080682138}
@@ -367,7 +367,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 1
 --- !u!1 &2328429452921111146
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,8 +406,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.5}
-  m_SizeDelta: {x: 1, y: 0.1}
+  m_AnchoredPosition: {x: 0, y: 1.683}
+  m_SizeDelta: {x: 2, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8269006952338312931
 CanvasRenderer:
@@ -702,8 +702,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerIndex: 0
   StartingHealth: 100
+  MaxHealth: 0
   MoveForce: 100
   MaxSpeed: 5
+  MoveStateName: mite_move
+  IdleStateName: mite-stand
 --- !u!50 &745589038681089425
 Rigidbody2D:
   serializedVersion: 4
