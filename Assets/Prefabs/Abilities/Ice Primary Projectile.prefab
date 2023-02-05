@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8183559061209215147}
-  - component: {fileID: 708342973136527137}
+  - component: {fileID: 6975839114755346374}
   m_Layer: 0
   m_Name: Ice Primary Projectile
   m_TagString: Untagged
@@ -117,7 +117,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &708342973136527137
+--- !u!114 &6975839114755346374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5227272188382361490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32cb85aaae949ac4e8aeb2b822133858, type: 3}
+  m_Script: {fileID: 11500000, guid: e67dbb05b663c4b4ba366b93bc923e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 50
@@ -134,7 +134,6 @@ MonoBehaviour:
   StackingTag: ice
   Stacks: 0
   MaxDistance: 1000
-  SlowAmount: 0.5
   HitLayerMask:
     serializedVersion: 2
     m_Bits: 512
@@ -143,3 +142,4 @@ MonoBehaviour:
     m_Bits: 64
   ExplosionPrefab: {fileID: 8403101494224845428, guid: c9ad197c49d0daf45abf1c2196c9fb3a, type: 3}
   Damage: 5
+  SlowAmount: 0.25

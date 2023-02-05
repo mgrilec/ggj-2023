@@ -44,6 +44,8 @@ public abstract class Projectile : MonoBehaviour
 
     public void Kill(RaycastHit2D hit)
     {
+        HitEffect(hit);
+
         if (ExplosionPrefab)
         {
             var instance = Instantiate(ExplosionPrefab);
