@@ -222,7 +222,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.51
+  m_Radius: 1
 --- !u!1 &4691768503882608771
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotatesWhileMoving: 0
   RotatesWhileMovingOffset: 0
+  IdleUntilPlayerEntersVision: 0
   StartingHealth: 20
   AttackPreference: 0
   AttackDamage: 20

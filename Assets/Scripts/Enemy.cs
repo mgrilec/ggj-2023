@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [Header("Move")]
     public bool RotatesWhileMoving;
     public float RotatesWhileMovingOffset;
+    public bool IdleUntilPlayerEntersVision;
 
     [Header("Stats")]
     public float StartingHealth = 20f;
@@ -106,7 +107,7 @@ public class Enemy : MonoBehaviour, IDamageable
                 visibleTargets.Add(Tree.Instance);
             }
         }
-        
+
 
         // sort targets
         visibleTargets.Sort((a, b) =>
@@ -154,7 +155,7 @@ public class Enemy : MonoBehaviour, IDamageable
         }
         else
         {
-            if (AttackPreference == AttackPreference.Tree && Tree.Instance)
+            if (AttackPreference == AttackPreference.Tree && Tree.Instance && !IdleUntilPlayerEntersVision)
             {
                 agent.isStopped = false;
                 agent.SetDestination(Tree.Instance.transform.position);
@@ -164,7 +165,7 @@ public class Enemy : MonoBehaviour, IDamageable
                 agent.isStopped = false;
                 agent.SetDestination(visibleTargets[0].transform.position);
             }
-            else if (Tree.Instance)
+            else if (Tree.Instance && !IdleUntilPlayerEntersVision)
             {
                 agent.isStopped = false;
                 agent.SetDestination(Tree.Instance.transform.position);
