@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour, IDamageable
     List<IDamageable> visibleTargetsWithinRange = new List<IDamageable>();
     HealthBar healthBar;
     new CircleCollider2D collider;
+    private SpriteRenderer sprite;
 
     private void Awake()
     {
@@ -49,6 +50,7 @@ public class Enemy : MonoBehaviour, IDamageable
         players = FindObjectsOfType<Player>();
         healthBar = GetComponentInChildren<HealthBar>();
         collider = GetComponentInChildren<CircleCollider2D>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -64,7 +66,7 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             Vector3 velocityNormalized = agent.velocity.normalized;
             float angle = Mathf.Atan2(velocityNormalized.y, velocityNormalized.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle + RotatesWhileMovingOffset, Vector3.forward);
+            sprite.transform.rotation = Quaternion.AngleAxis(angle + RotatesWhileMovingOffset, Vector3.forward);
         }
 
         // find closest player
@@ -145,19 +147,23 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             var target = visibleTargetsWithinRange[0];
             Attack(target);
+            agent.isStopped = true;
         }
         else
         {
             if (AttackPreference == AttackPreference.Tree && Tree.Instance)
             {
+                agent.isStopped = false;
                 agent.SetDestination(Tree.Instance.transform.position);
             }
             else if (visibleTargets.Count > 0)
             {
+                agent.isStopped = false;
                 agent.SetDestination(visibleTargets[0].transform.position);
             }
             else if (Tree.Instance)
             {
+                agent.isStopped = false;
                 agent.SetDestination(Tree.Instance.transform.position);
             }
         }

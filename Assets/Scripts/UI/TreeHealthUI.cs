@@ -2,14 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class TreeHealthUI : MonoBehaviour
 {
+    public static TreeHealthUI Instance;
+
     public TextMeshProUGUI tree;
     public TextMeshProUGUI wave;
+    public Transform GameOverParent;
+    public Image GameOverImage;
 
     public Color dangerColor;
     public Color normalColor;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Update()
     {
@@ -28,6 +40,17 @@ public class TreeHealthUI : MonoBehaviour
             wave.color = dangerColor;
             wave.text = "DANGER!!";
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
         
+    }
+
+    public void GameOver()
+    {
+        GameOverParent.gameObject.SetActive(true);
+        DOTween.To(() => GameOverImage.color, v => GameOverImage.color = v, new Color(GameOverImage.color.r, GameOverImage.color.g, GameOverImage.color.b, 1f), 2f);
     }
 }

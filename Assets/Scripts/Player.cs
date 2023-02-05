@@ -77,7 +77,7 @@ public class Player : MonoBehaviour, IDamageable
         Health = Mathf.Max(0, Health - damage);
         if (Health <= 0)
         {
-            // trigger game over
+            TreeHealthUI.Instance.GameOver();
         }
 
         healthBar.Set(Health / StartingHealth);

@@ -51,9 +51,25 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    public void StartExtraWave(Wave wave)
+    {
+        StartCoroutine(_StartExtraWave(wave));
+    }
+
+    private IEnumerator _StartExtraWave(Wave wave)
+    {
+        // starting delay
+        yield return new WaitForSeconds(wave.Delay);
+
+        foreach (var spawn in wave.Spawns)
+        {
+            Spawn(spawn);
+            yield return new WaitForSeconds(wave.DelayBetweenSpawns);
+        }
+    }
+
     void Spawn(WaveMonster spawn)
     {
-        var instance = Instantiate(spawn.EnemyPrefab.gameObject);
-        instance.transform.position = spawn.Portal.transform.position;
+        var instance = Instantiate(spawn.EnemyPrefab.gameObject, spawn.Portal.transform.position, Quaternion.identity);
     }
 }
