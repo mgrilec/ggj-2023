@@ -337,6 +337,7 @@ MonoBehaviour:
   AttackDamage: 40
   AttackRange: 20
   AttackCooldown: 1.5
+  Projectile: {fileID: 2254708746668535335, guid: 2314b2decc76be44aa3c1a28186873eb, type: 3}
   CorpsePrefabs:
   - {fileID: 7807395618734704158, guid: fb336d9eb488525448658de8db689a7f, type: 3}
   - {fileID: 7807395618734704158, guid: 9fea85577a25c364dbfa1465a3904ef8, type: 3}
@@ -345,6 +346,7 @@ MonoBehaviour:
   - {fileID: 7807395618734704158, guid: 0bae4bd34fe0842468812e2a2232ecf9, type: 3}
   - {fileID: 7807395618734704158, guid: ab21540892a2cb642b33961db8d253db, type: 3}
   DieEffectPrefab: {fileID: 8403101494224845428, guid: a5a48341d92bffb428a3883c60adc5d6, type: 3}
+  OrbPrefab: {fileID: 0}
 --- !u!50 &4691768505094061214
 Rigidbody2D:
   serializedVersion: 4

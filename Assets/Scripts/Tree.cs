@@ -36,6 +36,7 @@ public class Tree : MonoBehaviour, IDamageable
     private void Start()
     {
         Health = StartingHealth;
+        SpawnHealthPacks();
     }
 
     public void Damage(float damage)
@@ -75,6 +76,7 @@ public class Tree : MonoBehaviour, IDamageable
 
     private void SpawnHealthPack(Vector3 position)
     {
-        Instantiate(HealthPackPrefab, position, Quaternion.identity);
+        var random = Random.insideUnitSphere;
+        Instantiate(HealthPackPrefab, position + new Vector3(random.x, random.y, 0f), Quaternion.identity);
     }
 }

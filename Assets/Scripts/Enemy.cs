@@ -29,14 +29,16 @@ public class Enemy : MonoBehaviour, IDamageable
     public float AttackRange;
     public float AttackCooldown;
     private float lastAttackTime;
+    public GameObject Projectile;
 
     [Header("Corpses")]
     public List<GameObject> CorpsePrefabs = new List<GameObject>();
     public GameObject DieEffectPrefab;
 
-    public bool Alive { get; private set; } = true;
+    [Header("Orb")]
+    public GameObject OrbPrefab;
 
-    
+    public bool Alive { get; private set; } = true;
 
     NavMeshAgent agent;
     float damageOverTime;
@@ -201,7 +203,19 @@ public class Enemy : MonoBehaviour, IDamageable
             return;
         }
 
-        target.Damage(AttackDamage);
+        if (Projectile)
+        {
+            var instance = Instantiate(Projectile, transform.position, Quaternion.identity);
+            var projectile = instance.GetComponentInChildren<HomingProjectile>();
+            projectile.Target = target;
+            projectile.Damage = AttackDamage;
+        }
+        else
+        {
+            target.Damage(AttackDamage);
+        }
+
+        
         lastAttackTime = Time.time;
     }
 
@@ -261,6 +275,11 @@ public class Enemy : MonoBehaviour, IDamageable
         if (DieEffectPrefab)
         {
             Instantiate(DieEffectPrefab, transform.position, Quaternion.identity);
+        }
+
+        if (OrbPrefab)
+        {
+            var instance = Instantiate(OrbPrefab, transform.position, Quaternion.identity);
         }
 
         Destroy(gameObject);
