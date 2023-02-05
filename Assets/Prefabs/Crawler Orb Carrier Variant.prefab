@@ -53,8 +53,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4691768505094061210, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
       propertyPath: m_Name
-      value: Crawler Orb Carrier
+      value: Crawler Orb Carrier Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      propertyPath: OrbPrefab
+      value: 
+      objectReference: {fileID: 1857189910335604730, guid: 488305a565017644e92e1f467c02f9ff, type: 3}
     - target: {fileID: 5895470562141203775, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
       propertyPath: m_Sprite
       value: 
