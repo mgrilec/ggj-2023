@@ -36,20 +36,26 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public bool Alive { get; private set; } = true;
 
-    NavMeshAgent agent;
+    
 
+    NavMeshAgent agent;
+    float damageOverTime;
+    float slow = 1f;
+    List<string> stackingTags = new List<string>();
     Player[] players;
     List<IDamageable> visibleTargets = new List<IDamageable>();
     List<IDamageable> visibleTargetsWithinRange = new List<IDamageable>();
     HealthBar healthBar;
     new CircleCollider2D collider;
     private SpriteRenderer sprite;
+    float agentStartingSpeed;
 
     private void Awake()
     {
         agent = GetComponentInChildren<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agentStartingSpeed = agent.speed;
 
         players = FindObjectsOfType<Player>();
         healthBar = GetComponentInChildren<HealthBar>();
@@ -66,6 +72,16 @@ public class Enemy : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
+        if (damageOverTime > 0f)
+        {
+            Damage(damageOverTime * Time.deltaTime);
+        }
+
+        if (slow < 1f)
+        {
+            agent.speed = agentStartingSpeed * slow;
+        }
+
         if (RotatesWhileMoving)
         {
             Vector3 velocityNormalized = agent.velocity.normalized;
@@ -197,6 +213,34 @@ public class Enemy : MonoBehaviour, IDamageable
         if (Health <= 0)
         {
             Kill();
+        }
+    }
+
+    public void DamageOverTime(float damage, bool stacks, string stackingTag)
+    {
+        if (!stacks && !stackingTags.Contains(stackingTag))
+        {
+            stackingTags.Add(stackingTag);
+            damageOverTime += damage;
+        }
+        else
+        {
+            damageOverTime += damage;
+        }
+    }
+
+    public void Slow(float amount, bool stacks, string stackingTag)
+    {
+        if (!stacks && !stackingTags.Contains(stackingTag))
+        {
+            Debug.Log("Slow non stacking");
+            stackingTags.Add(stackingTag);
+            slow *= (1f - amount);
+        }
+        else if (stacks)
+        {
+            Debug.Log("Slow stacking");
+            slow *= amount;
         }
     }
 

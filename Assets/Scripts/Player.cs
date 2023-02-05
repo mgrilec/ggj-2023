@@ -9,6 +9,7 @@ public class Player : MonoBehaviour, IDamageable
 
     [Header("Stats")]
     public float StartingHealth;
+    public float MaxHealth;
     public float Health { get; private set; }
     public float Radius { get { return collider?.radius ?? 0f; } }
 
@@ -39,7 +40,7 @@ public class Player : MonoBehaviour, IDamageable
     void Start()
     {
         Health = StartingHealth;
-        healthBar.Set(Health / StartingHealth);
+        healthBar.Set(Health / MaxHealth);
     }
 
     // Update is called once per frame
@@ -81,5 +82,15 @@ public class Player : MonoBehaviour, IDamageable
         }
 
         healthBar.Set(Health / StartingHealth);
+    }
+
+    public void DamageOverTime(float damage, bool stacks, string stackingTag)
+    {
+
+    }
+
+    public void Slow(float amount, bool stacks, string stackingTag)
+    {
+
     }
 }

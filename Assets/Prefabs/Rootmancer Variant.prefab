@@ -64,12 +64,16 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3457939807069674447, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
+      propertyPath: MaxHealth
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457939807069674447, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: PlayerIndex
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3457939807069674447, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: StartingHealth
-      value: 95
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4768926740532805814, guid: f94efa43bda3a084cb3dbcb1c2ce0be9, type: 3}
       propertyPath: m_LocalRotation.w

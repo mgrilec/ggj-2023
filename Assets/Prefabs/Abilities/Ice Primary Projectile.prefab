@@ -130,7 +130,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 50
+  DamageOverTime: 0
+  StackingTag: ice
+  Stacks: 0
   MaxDistance: 1000
+  SlowAmount: 0.5
   HitLayerMask:
     serializedVersion: 2
     m_Bits: 512

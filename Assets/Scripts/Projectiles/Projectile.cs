@@ -5,6 +5,9 @@ using UnityEngine;
 public abstract class Projectile : MonoBehaviour
 {
     public float Speed;
+    public float DamageOverTime;
+    public string StackingTag;
+    public bool Stacks;
     public float MaxDistance = 10000;
     private float distance;
 

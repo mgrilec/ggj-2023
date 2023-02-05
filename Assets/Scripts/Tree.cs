@@ -53,4 +53,14 @@ public class Tree : MonoBehaviour, IDamageable
             TreeHealthUI.Instance.GameOver();
         }
     }
+
+    public void DamageOverTime(float damage, bool stacks, string stackingTag)
+    {
+
+    }
+
+    public void Slow(float amount, bool stacks, string stackingTag)
+    {
+
+    }
 }
