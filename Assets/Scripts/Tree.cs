@@ -54,6 +54,11 @@ public class Tree : MonoBehaviour, IDamageable
 
     public void Damage(float damage)
     {
+        if (Orbs >= 3)
+        {
+            return;
+        }
+
         for (int spriteIndex = 0; spriteIndex < sprites.Count; spriteIndex++)
         {
             Vector3 startingPosition = spriteStartingPositions[spriteIndex];

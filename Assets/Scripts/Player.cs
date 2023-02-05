@@ -12,6 +12,7 @@ public class Player : MonoBehaviour, IDamageable
     public float MaxHealth;
     public float Health { get; private set; }
     public float Radius { get { return collider?.radius ?? 0f; } }
+    public float Spread = 1f;
 
     [Header("Movement")]
     public float MoveForce;
@@ -81,7 +82,7 @@ public class Player : MonoBehaviour, IDamageable
             {
                 if (Input.GetButton($"{ability.Key}-{PlayerIndex}") && ability.CanFire())
                 {
-                    ability.Fire(transform.position, aimer.Angle);
+                    ability.Fire(transform.position, aimer.Angle + Random.Range(-Spread, Spread));
                 }
             }
         }
@@ -89,6 +90,11 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Damage(float damage)
     {
+        if (Tree.Instance.Orbs >= 3)
+        {
+            return;
+        }
+
         Health = Mathf.Max(0, Health - damage);
         if (Health <= 0)
         {
