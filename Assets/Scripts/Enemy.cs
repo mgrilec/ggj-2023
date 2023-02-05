@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public bool RotatesWhileMoving;
     public float RotatesWhileMovingOffset;
     public bool IdleUntilPlayerEntersVision;
+    public float VisionRadius = 10;
 
     [Header("Stats")]
     public float StartingHealth = 20f;
@@ -109,8 +110,9 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             foreach (var player in players)
             {
+                float distanceSqr = (player.transform.position - transform.position).sqrMagnitude;
                 NavMeshHit hit;
-                if (!agent.Raycast(player.transform.position, out hit))
+                if (distanceSqr < VisionRadius * VisionRadius && !agent.Raycast(player.transform.position, out hit))
                 {
                     visibleTargets.Add(player);
                 }
