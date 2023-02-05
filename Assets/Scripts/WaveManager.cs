@@ -34,6 +34,11 @@ public class WaveManager : MonoBehaviour
         {
             yield return StartWave(wave);
         }
+
+        while (true)
+        {
+            yield return StartWave(Waves[Waves.Count - 1]);
+        }
     }
 
     private IEnumerator StartWave(Wave wave)

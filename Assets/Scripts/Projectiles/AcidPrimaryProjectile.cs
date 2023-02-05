@@ -5,6 +5,7 @@ using UnityEngine;
 public class AcidPrimaryProjectile : Projectile
 {
     public float Damage;
+    public float SlowAmount;
 
     public override void HitEffect(RaycastHit2D hit)
     {
@@ -15,5 +16,10 @@ public class AcidPrimaryProjectile : Projectile
 
         var damageable = hit.rigidbody.GetComponent<IDamageable>();
         damageable.Damage(Damage);
+
+        if (SlowAmount > 0f)
+        {
+            damageable.Slow(SlowAmount, Stacks, StackingTag);
+        }
     }
 }
