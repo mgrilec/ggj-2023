@@ -134,12 +134,13 @@ MonoBehaviour:
   StackingTag: 
   Stacks: 0
   MaxDistance: 1000
-  SlowAmount: 0
   HitLayerMask:
     serializedVersion: 2
     m_Bits: 512
   DestroyLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  ExplosionPrefab: {fileID: 8403101494224845428, guid: c9ad197c49d0daf45abf1c2196c9fb3a, type: 3}
-  Damage: 5
+  ExplosionPrefab: {fileID: 8403101494224845428, guid: 7998d62e949788a4699a5ab355b64261, type: 3}
+  Damage: 1
+  SplashDamage: 1
+  SplashRadius: 3

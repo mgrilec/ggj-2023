@@ -233,13 +233,11 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if (!stacks && !stackingTags.Contains(stackingTag))
         {
-            Debug.Log("Slow non stacking");
             stackingTags.Add(stackingTag);
             slow *= (1f - amount);
         }
         else if (stacks)
         {
-            Debug.Log("Slow stacking");
             slow *= amount;
         }
     }

@@ -5,21 +5,25 @@ using UnityEngine;
 public class AcidPrimaryProjectile : Projectile
 {
     public float Damage;
-    public float SlowAmount;
+    public float SplashDamage;
+    public float SplashRadius;
 
     public override void HitEffect(RaycastHit2D hit)
     {
-        if (!hit.rigidbody)
+        if (hit.rigidbody)
         {
-            return;
+            var damageable = hit.rigidbody.GetComponent<IDamageable>();
+            damageable.Damage(Damage);
         }
 
-        var damageable = hit.rigidbody.GetComponent<IDamageable>();
-        damageable.Damage(Damage);
-
-        if (SlowAmount > 0f)
+        var colliders = Physics2D.OverlapCircleAll(hit.point, SplashRadius, HitLayerMask);
+        foreach (var collider in colliders)
         {
-            damageable.Slow(SlowAmount, Stacks, StackingTag);
+            if (collider.attachedRigidbody)
+            {
+                var damageable = collider.attachedRigidbody.GetComponent<IDamageable>();
+                damageable.Damage(SplashDamage);
+            }
         }
     }
 }
