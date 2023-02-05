@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4691768505094061208, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.447462
+      value: -4.909303
       objectReference: {fileID: 0}
     - target: {fileID: 4691768505094061208, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8380804
+      value: -21.86274
       objectReference: {fileID: 0}
     - target: {fileID: 4691768505094061208, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
       propertyPath: m_LocalPosition.z
@@ -53,8 +53,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4691768505094061210, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
       propertyPath: m_Name
-      value: Worm Orb Carrier
+      value: Worm Orb Carrier Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4691768505094061213, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
+      propertyPath: OrbPrefab
+      value: 
+      objectReference: {fileID: 1857189910335604730, guid: 488305a565017644e92e1f467c02f9ff, type: 3}
     - target: {fileID: 5895470562141203775, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
       propertyPath: m_Color.b
       value: 0.36205056
@@ -71,5 +75,9 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 515c2cd62b7001a41b1c2f3a4f1d73c5, type: 2}
+    - target: {fileID: 6298465689273588924, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a23ddf6fddb7cef47a2dadada132a180, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
