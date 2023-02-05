@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class HomingProjectile : MonoBehaviour
 {
-    public Transform Target;
+    public IDamageable Target;
+    public float Damage;
     public float Speed = 10f;
 
     private void Update()
@@ -14,6 +15,7 @@ public class HomingProjectile : MonoBehaviour
 
         if ((transform.position - Target.transform.position).sqrMagnitude < 1f)
         {
+            Target.Damage(Damage);
             Destroy(gameObject);
         }
     }

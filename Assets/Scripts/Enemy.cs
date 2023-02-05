@@ -207,7 +207,8 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             var instance = Instantiate(Projectile, transform.position, Quaternion.identity);
             var projectile = instance.GetComponentInChildren<HomingProjectile>();
-            projectile.Target = target.transform;
+            projectile.Target = target;
+            projectile.Damage = AttackDamage;
         }
         else
         {
