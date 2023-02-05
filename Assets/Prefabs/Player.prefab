@@ -704,7 +704,7 @@ MonoBehaviour:
   StartingHealth: 100
   MaxHealth: 0
   Spread: 2
-  MoveForce: 200
+  MoveForce: 500
   MaxSpeed: 17
   MoveStateName: mite_move
   IdleStateName: mite-stand

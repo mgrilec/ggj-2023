@@ -53,6 +53,22 @@ public class Player : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
+        if (aimer.Aiming)
+        {
+            sprite.transform.rotation = Quaternion.AngleAxis(aimer.Angle + 90f, Vector3.forward);
+
+            foreach (var ability in Abilities)
+            {
+                if (Input.GetButton($"{ability.Key}-{PlayerIndex}") && ability.CanFire())
+                {
+                    ability.Fire(transform.position, aimer.Angle + Random.Range(-Spread, Spread));
+                }
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
         var horizontal = Input.GetAxis($"horizontal-{PlayerIndex}");
         var vertical = Input.GetAxis($"vertical-{PlayerIndex}");
         var input = new Vector2(horizontal, vertical);
@@ -72,19 +88,6 @@ public class Player : MonoBehaviour, IDamageable
         {
             var velocityNormalized = rigidbody.velocity.normalized;
             rigidbody.velocity = new Vector2(velocityNormalized.x, velocityNormalized.y) * MaxSpeed;
-        }
-
-        if (aimer.Aiming)
-        {
-            sprite.transform.rotation = Quaternion.AngleAxis(aimer.Angle + 90f, Vector3.forward);
-
-            foreach (var ability in Abilities)
-            {
-                if (Input.GetButton($"{ability.Key}-{PlayerIndex}") && ability.CanFire())
-                {
-                    ability.Fire(transform.position, aimer.Angle + Random.Range(-Spread, Spread));
-                }
-            }
         }
     }
 

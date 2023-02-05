@@ -4165,11 +4165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4691768505094061208, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.81
+      value: -11.54
       objectReference: {fileID: 0}
     - target: {fileID: 4691768505094061208, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.55
+      value: -6.48
       objectReference: {fileID: 0}
     - target: {fileID: 4691768505094061208, guid: 1eb4c982e54a14f8ba2e9633ca1a1d27, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12712,6 +12712,25 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &1639117601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4553387978686284045, guid: d7e04d3cc96b5f74fa582f5fa5d57d0b, type: 3}
+  m_PrefabInstance: {fileID: 3363047641907849155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1639117605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639117601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 4
+  m_AspectRatio: 1.6623377
 --- !u!1 &1656906888
 GameObject:
   m_ObjectHideFlags: 0
@@ -15782,9 +15801,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1290990540633096145, guid: d7e04d3cc96b5f74fa582f5fa5d57d0b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290990540633096145, guid: d7e04d3cc96b5f74fa582f5fa5d57d0b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290990540633096145, guid: d7e04d3cc96b5f74fa582f5fa5d57d0b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290990540633096145, guid: d7e04d3cc96b5f74fa582f5fa5d57d0b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 45.934387
+      objectReference: {fileID: 0}
     - target: {fileID: 1374991846904424607, guid: d7e04d3cc96b5f74fa582f5fa5d57d0b, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251840557328526631, guid: d7e04d3cc96b5f74fa582f5fa5d57d0b, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292304930010827773, guid: d7e04d3cc96b5f74fa582f5fa5d57d0b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 83.80002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138704216910549098, guid: d7e04d3cc96b5f74fa582f5fa5d57d0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5663685136000148931, guid: d7e04d3cc96b5f74fa582f5fa5d57d0b, type: 3}
       propertyPath: m_Camera
