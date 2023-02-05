@@ -222,7 +222,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 1
 --- !u!1 &4691768503882608771
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ Transform:
   m_GameObject: {fileID: 4691768503882608771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4691768505094061208}
@@ -381,10 +381,17 @@ MonoBehaviour:
   RotatesWhileMovingOffset: 0
   StartingHealth: 15
   AttackPreference: 1
-  AttackDamage: 10
+  AttackDamage: 2
   AttackRange: 2
   AttackCooldown: 0.5
-  CorpsePrefabs: []
+  CorpsePrefabs:
+  - {fileID: 7807395618734704158, guid: fb336d9eb488525448658de8db689a7f, type: 3}
+  - {fileID: 7807395618734704158, guid: 9fea85577a25c364dbfa1465a3904ef8, type: 3}
+  - {fileID: 7807395618734704158, guid: d67d4e880ef46ec469ac3e7b82c90e8e, type: 3}
+  - {fileID: 7807395618734704158, guid: 73206e21851feba4e807998f88bcbc0a, type: 3}
+  - {fileID: 7807395618734704158, guid: 0bae4bd34fe0842468812e2a2232ecf9, type: 3}
+  - {fileID: 7807395618734704158, guid: ab21540892a2cb642b33961db8d253db, type: 3}
+  DieEffectPrefab: {fileID: 8403101494224845428, guid: a5a48341d92bffb428a3883c60adc5d6, type: 3}
 --- !u!50 &4691768505094061214
 Rigidbody2D:
   serializedVersion: 4
@@ -466,8 +473,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.629}
-  m_SizeDelta: {x: 0.5, y: 0.08}
+  m_AnchoredPosition: {x: 0, y: 1.09}
+  m_SizeDelta: {x: 1, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1753189460879167564
 CanvasRenderer:

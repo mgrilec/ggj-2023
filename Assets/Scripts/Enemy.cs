@@ -31,6 +31,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
     [Header("Corpses")]
     public List<GameObject> CorpsePrefabs = new List<GameObject>();
+    public GameObject DieEffectPrefab;
+
+    public bool Alive { get; private set; } = true;
 
     NavMeshAgent agent;
 
@@ -192,17 +195,31 @@ public class Enemy : MonoBehaviour, IDamageable
 
         if (Health <= 0)
         {
-            Destroy(gameObject);
+            Kill();
         }
     }
 
-    private void OnDestroy()
+    private void Kill()
     {
+        if (!Alive)
+        {
+            return;
+        }
+
+        Alive = false;
+
         if (CorpsePrefabs.Count > 0)
         {
             GameObject corpsePrefab = CorpsePrefabs[Random.Range(0, CorpsePrefabs.Count)];
             var instance = Instantiate(corpsePrefab);
             instance.transform.position = transform.position;
         }
+
+        if (DieEffectPrefab)
+        {
+            Instantiate(DieEffectPrefab, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject);
     }
 }
