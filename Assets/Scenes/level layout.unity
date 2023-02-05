@@ -13010,7 +13010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4938225501777340174, guid: 5ce0e50a5d866084589605a32f52b1f0, type: 3}
       propertyPath: Wave.Spawns.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4938225501777340174, guid: 5ce0e50a5d866084589605a32f52b1f0, type: 3}
       propertyPath: Wave.DelayBetweenSpawns
@@ -13055,7 +13055,7 @@ PrefabInstance:
     - target: {fileID: 4938225501777340174, guid: 5ce0e50a5d866084589605a32f52b1f0, type: 3}
       propertyPath: Wave.Spawns.Array.data[4].EnemyPrefab
       value: 
-      objectReference: {fileID: 4691768505094061213, guid: 6587be6ed3d5146298e9e9274c6c1f9a, type: 3}
+      objectReference: {fileID: 8010965829171475597, guid: 03bebf2ade9b74296a7223929648c6bd, type: 3}
     - target: {fileID: 4938225501777340175, guid: 5ce0e50a5d866084589605a32f52b1f0, type: 3}
       propertyPath: m_RootOrder
       value: 0
